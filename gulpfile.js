@@ -19,12 +19,13 @@ const destPath = {
 
 // ブラウザーシンク（リアルタイムでブラウザに反映させる処理）
 const browserSync = require("browser-sync");
-const browserSyncOption = {
-    proxy: 'http://opencafe.wp/', //localのSite domain
-  }
 const browserSyncFunc = () => {
     browserSync.init(browserSyncOption);
 }
+const browserSyncOption = {
+    proxy: 'http://opencafe.wp/', //localのSite domain,
+    notify: false
+  }
 const browserSyncReload = (done) => {
     browserSync.reload();
     done();
@@ -64,6 +65,7 @@ const cssSass = () => {
         .pipe(postcss([cssnext(browsers)]))
         .pipe(sourcemaps.write('./'))
         .pipe(dest(destPath.css))
+        .pipe(browserSync.stream())//追加分
         .pipe(notify({
             message: 'コンパイル出来たよ！',//文字は好きなものに変更してね！
             onLast: true

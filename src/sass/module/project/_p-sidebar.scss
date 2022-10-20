@@ -1,0 +1,94 @@
+@use "global" as *;
+.p-sidebar {
+  @include mq("md") {
+    max-width: rem(300);
+    width: 100%;
+  }
+}
+.p-sidebar__article {
+  background-color: #F8F8F8;
+  padding: rem(20);
+}
+
+.p-sidebar__article + .p-sidebar__article {
+  margin-top: rem(40);
+}
+
+.p-sidebar__head {
+  font-size: rem(20);
+  line-height: calc(28 / 20);
+  position: relative;
+}
+
+.p-sidebar__head::after {
+  content: "";
+  position: absolute;
+  bottom: rem(-20);
+  left: 0;
+  width: rem(32);
+  height: rem(1);
+  background-color: $text-black;
+}
+
+.p-sidebar__latest-posts {
+  margin-top: rem(41);
+}
+
+.p-sidebar__single {
+  display: flex;
+  align-items: center;
+}
+
+.p-sidebar__single + .p-sidebar__single {
+  margin-top: rem(16);
+}
+
+.p-sidebar__img {
+  width: rem(100);
+}
+
+.p-sidebar__img img {
+  aspect-ratio: 1;
+}
+
+.p-sidebar__body {
+  flex: 1;
+  margin-left: rem(14);
+}
+
+.p-sidebar__body h3 {
+  font-size: rem(14);
+  line-height: calc(24 / 14);
+}
+
+.p-sidebar__body time {
+  font-size: rem(12);
+  font-weight: $medium;
+  margin-top: rem(12);
+}
+
+.p-sidebar__lists {
+  margin-top: rem(41);
+}
+
+.p-sidebar__list {
+  font-size: rem(16);
+  padding-left: rem(8);
+  position: relative;
+}
+
+.p-sidebar__list::before {
+  content: "";
+  position: absolute;
+  top: rem(8);
+  left: rem(-8);
+  width: rem(8.5);
+  height: rem(8.5);
+  transform: rotate(225deg);
+  border-left: rem(1) solid $text-black;
+  border-bottom: rem(1) solid $text-black;
+}
+
+.p-sidebar__list + .p-sidebar__list {
+  margin-top: rem(16);
+}

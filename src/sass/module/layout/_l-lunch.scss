@@ -1,0 +1,25 @@
+@use "global" as *;
+.l-lunch {
+  margin-top: rem(120);
+  position: relative;
+  @include mq("md") {
+    margin-top: rem(240);
+  }
+}
+
+.l-lunch::after {
+  content: "";
+  position: absolute;
+  top: rem(-180);
+  right: rem(-36);
+  width: rem(119);
+  height: rem(135);
+  background: url(../images/bg_coffee-leaves.png) no-repeat center center /
+    cover;
+  @include mq("md") {
+    top: rem(-130);
+    right: rem(-40);
+    width: rem(201);
+    height: rem(228);
+  }
+}

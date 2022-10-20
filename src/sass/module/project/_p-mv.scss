@@ -1,0 +1,90 @@
+@use "global" as *;
+.p-mv__wrapper {
+  display: flex;
+  height: 100%;
+  position: relative;
+}
+
+.p-mv__logo {
+  height: inherit;
+  width: rem(120);
+  margin-left: rem(14);
+  position: relative;
+  z-index: 1100;
+  display: none;
+  @include mq("md") {
+    display: block;
+    margin-left: 0;
+    margin: 0 auto;
+  }
+}
+
+.p-mv__pc-nav {
+  padding: rem(29) rem(18) 0;
+  width: calc(200 / 1280) * 100%;
+}
+
+.p-mv__slider {
+  flex: 1;
+  position: relative;
+  z-index: 1;
+  @include mq("md") {
+    padding-bottom: rem(60);
+  }
+}
+
+.p-mv__slider::after {
+  display: none;
+  @include mq("md") {
+    display: block;
+    content: "";
+    position: absolute;
+    bottom: rem(-65);
+    right: 0;
+    width: calc(984 / 1080) * 100%;
+    height: 100%;
+    background-color: $bg-dark;
+    z-index: -1;
+  }
+}
+
+.p-pc-nav__items {
+  margin-top: rem(60);
+}
+
+// 最新記事
+.p-mv__article {
+  content: "";
+  position: absolute;
+  bottom: rem(32);
+  left: 50%;
+  transform: translateX(-50%);
+  width: rem(335);
+  display: flex;
+  z-index: 1;
+  @include mq("md") {
+    bottom: rem(80);
+    right: rem(20);
+    left: initial;
+    transform: initial;
+    width: rem(388);
+  }
+}
+
+.p-mv__article::after {
+  content: "";
+  position: absolute;
+  top: rem(-40);
+  right: rem(2);
+  width: rem(120);
+  background-size: cover;
+  aspect-ratio: 120 /71;
+  background-image: url(../images/img_balloon-pickup.svg);
+  transform-origin: 100% 100%;
+  transform: rotate(5deg);
+  @include mq("md") {
+    width: rem(160);
+    top: rem(-70);
+    right: rem(4);
+  }
+}

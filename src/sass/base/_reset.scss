@@ -36,6 +36,8 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+  position: relative;
+  z-index: -10;
 }
 
 /* Remove list styles on ul, ol elements with a class attribute */
@@ -70,9 +72,9 @@ select {
 }
 
 /* Blur images when they have no alt attribute */
-img:not([alt]) {
-  filter: blur(10px);
-}
+// img:not([alt]) {
+//   filter: blur(10px);
+// }
 
 
 /* フォームリセット */

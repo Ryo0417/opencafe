@@ -1,0 +1,61 @@
+@use "global" as *;
+.p-sp-nav__items {
+  text-align: left;
+}
+
+.p-sp-nav__item {
+  padding-top: rem(16);
+  padding-bottom: rem(16);
+
+}
+
+.p-sp-nav__item a {
+  display: block;
+  width: 100%;
+  font-size: rem(24);
+  font-family: $second-font-family;
+  font-weight: $regular;
+  line-height: calc(29 / 24);
+  text-transform: uppercase;
+}
+
+.p-sp-nav__item a:hover {
+  @include mq('md') {
+    border-bottom: 1px solid #FFEA2E;
+  }
+}
+
+.p-sp-nav__item a span {
+  font-size: rem(10);
+  font-weight: $medium;
+  display: inline-block;
+  margin-left: rem(34);
+  position: relative;
+}
+
+.p-sp-nav__item a span::before {
+    content: "／";
+    position: absolute;
+    top: 50%;
+    left: rem(-20);
+    transform: translateY(-50%);
+}
+
+.p-header-background {
+  background: $main-color;
+  position: fixed;
+  max-width: #{map-get($breakpoints,'md')-1}px;
+  top: 0;
+  right: 0;
+  max-width: rem(375);
+  width: 100%;
+  height: 100%;
+  z-index: 1099;
+  transform: translateX(101%);
+  transition: transform 0.3s;
+}
+
+.p-header-background.is-active {
+  transform: translateX(0);
+  transition: 0.3s;
+}

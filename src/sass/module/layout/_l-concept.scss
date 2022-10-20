@@ -1,0 +1,31 @@
+@use "global" as *;
+.l-concept {
+  padding-top: rem(120);
+  // padding-bottom: rem(73);
+  position: relative;
+  @include mq("md") {
+    max-width: rem(1280);
+    width: 100%;
+    margin: 0 auto;
+    padding-top: rem(160);
+    padding-bottom: rem(100);
+  }
+}
+
+.l-concept::before {
+  content: "";
+  position: absolute;
+  top: rem(-20);
+  right: rem(-20);
+  background: url(../images/bg_coffee-beans.png) no-repeat center center /
+    contain;
+  width: rem(145);
+  height: rem(130);
+  z-index: 1;
+  @include mq("md") {
+    top: rem(-40);
+    right: rem(-42);
+    width: rem(296);
+    height: rem(265);
+  }
+}

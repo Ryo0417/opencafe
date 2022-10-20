@@ -1,0 +1,85 @@
+@use "global" as *;
+.wpcf7 {
+  margin-top: rem(60);
+  @include mq("md") {
+    margin-top: rem(80);
+  }
+}
+
+.wpcf7-form p label {
+  margin-top: rem(40);
+}
+
+.wpcf7-form-control-wrap {
+  display: block;
+  @include mq("md") {
+    display: block;
+    width: 71.2%;
+    margin-top: 0 !important;
+  }
+}
+
+.wpcf7-radio {
+  display: block;
+  margin-top: rem(21);
+  @include mq("md") {
+    margin-top: 0;
+    margin-left: rem(28);
+  }
+}
+
+.wpcf7-list-item {
+  margin: 0;
+}
+
+.wpcf7-list-item + .wpcf7-list-item {
+  margin-top: rem(16);
+}
+
+.wpcf7-list-item-label {
+  cursor: pointer;
+  display: flex;
+}
+
+/* デフォルトのボタン */
+input[type="radio"] {
+  opacity: 0; /* デフォルトのボタンを非表示 */
+  position: absolute;
+}
+
+.wpcf7-list-item {
+  display: block;
+}
+
+/* チェック前のボタン */
+.wpcf7-list-item-label::before {
+  background: #fff;
+  border: 1px solid #333;
+  border-radius: 100%; /* ラジオボタンっぽく丸くする */
+  content: "";
+  height: 1.2em;
+  margin-bottom: auto;
+  margin-right: .5em;
+  margin-top: auto;
+  transition: background-color .5s; /* 色をじんわり変化させる */
+  width: 1.2em;
+}
+
+/* チェック後のボタン */
+input[type="radio"]:checked + .wpcf7-list-item-label::before {
+  background-color: #F07317; /* チェック後の中心の色 */
+  box-shadow: inset 0 0 0 3px $text-white; /* 中心の色のスタイル */
+}
+
+.wpcf7-submit {
+  color: $text-white;
+}
+
+div.wpcf7 .wpcf7-spinner {
+  display: block;
+  margin: 0 auto;
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+}

@@ -1,0 +1,24 @@
+@use "global" as *;
+.p-sub-shop__inner {
+  padding-top: rem(53.6);
+  padding-bottom: rem(160);
+  padding-left: $padding-sp;
+  padding-right: $padding-sp;
+  @include mq("md") {
+    max-width: rem(739);
+    width: 100%;
+    margin: 0 auto;
+    padding-top: rem(80);
+    padding-bottom: rem(160);
+    padding-left: $padding-pc;
+    padding-right: $padding-pc;
+  }
+}
+
+.p-sub-shop__wrapper {
+  // max-width: rem(375);
+  margin: 0 auto;
+  @include mq("md") {
+    max-width: rem(728);
+  }
+}

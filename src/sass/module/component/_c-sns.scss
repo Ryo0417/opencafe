@@ -1,0 +1,31 @@
+@use "global" as *;
+.c-sns {
+  display: flex;
+  gap: rem(32);
+}
+
+.c-sns.c-sns--footer {
+  gap: rem(24);
+  justify-content: center;
+}
+
+.c-sns__twitter,
+.c-sns__youtube,
+.c-sns__instagram {
+  width: rem(40);
+}
+
+.c-sns__twitter--pc,
+.c-sns__youtube--pc,
+.c-sns__instagram--pc {
+  width: rem(24);
+}
+
+.c-sns__twitter.c-sns__twitter--footer,
+.c-sns__youtube.c-sns__youtube--footer,
+.c-sns__instagram.c-sns__instagram--footer {
+  width: rem(32);
+  @include mq("md") {
+    width: rem(24);
+  }
+}

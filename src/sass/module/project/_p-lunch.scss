@@ -1,0 +1,82 @@
+@use "global" as *;
+.p-lunch {
+  padding-top: rem(60);
+  padding-bottom: rem(60);
+  background-color: $bg-dark;
+}
+
+.p-lunch__inner {
+  margin: 0 auto;
+  position: relative;
+  @include mq("md") {
+    max-width: rem(1230);
+    padding-left: $padding-pc;
+    padding-right: $padding-pc;
+  }
+}
+
+.p-lunch__inner::after {
+  content: "";
+  position: absolute;
+  top: rem(-100);
+  right: rem(-20);
+  width: rem(200);
+  height: rem(93);
+  background-position: 100%, 100%;
+  background: url(../images/img_balloon-special-lunch-set.svg) no-repeat center
+    center / cover;
+  transform: rotate(4deg);
+  z-index: 1;
+  @include mq("md") {
+    top: rem(80);
+    right: 0;
+    width: rem(300);
+    height: rem(140);
+  }
+}
+
+.p-lunch__head {
+  text-align: center;
+}
+
+.p-lunch__wrapper {
+  margin-top: rem(60);
+  padding: rem(39) rem(20) rem(20);
+  background-color: $text-white;
+  @include mq("md") {
+    padding: rem(60) rem(40) rem(40);
+  }
+}
+
+.p-lunch__items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  max-width: rem(550);
+  width: 100%;
+  margin: 0 auto;
+  @include mq("md") {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: initial;
+  }
+}
+
+.p-lunch__item:nth-child(even) {
+  @include mq("md") {
+    margin-top: rem(40);
+  }
+}
+
+.p-lunch__set {
+  margin-top: rem(20);
+  padding-top: rem(20);
+  padding-bottom: rem(20);
+  background-color: #f7f6f4;
+  @include mq("md") {
+    margin-top: rem(58);
+    padding-left: rem(70);
+    padding-right: rem(70);
+  }
+}

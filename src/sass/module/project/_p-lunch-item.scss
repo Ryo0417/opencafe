@@ -1,0 +1,32 @@
+@use "global" as *;
+.p-lunch-item {
+
+}
+
+.p-lunch-item__body {
+  display: flex;
+  align-items: center;
+  margin-top: rem(8);
+  @include mq("md") {
+    margin-top: rem(16);
+  }
+}
+
+.p-lunch-item__label {
+  font-size: rem(19);
+  line-height: calc(23 / 19);
+  padding: rem(3) rem(6);
+  color: $text-white;
+  background-color: $text-black;
+}
+
+.p-lunch-item__title {
+  margin-left: rem(6);
+  font-size: rem(14);
+  line-height: calc(20 / 14);
+  @include mq("md") {
+    margin-left: rem(12);
+    font-size: rem(18);
+    line-height: calc(26 / 18);
+  }
+}

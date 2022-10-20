@@ -1,0 +1,37 @@
+@use "global" as *;
+.p-footer {
+  background-color: $main-color;
+  position: relative;
+}
+
+.p-footer::before {
+  content: "";
+  position: absolute;
+  top: rem(-54);
+  left: rem(-35);
+  width: rem(126);
+  height: rem(113);
+  background: url(../images/bg_coffee-beans3.png) no-repeat center center /
+    cover;
+  @include mq("md") {
+    top: rem(-150);
+    left: rem(-74);
+    width: rem(322);
+    height: rem(288);
+  }
+}
+
+.p-footer__content {
+  max-width: rem(250);
+  width: 100%;
+  margin: 0 auto;
+  padding-top: rem(40);
+  padding-bottom: rem(20);
+}
+
+.p-footer__copyright {
+  font-size: rem(12);
+  color: $text-white;
+  margin-top: rem(40);
+  text-align: center;
+}

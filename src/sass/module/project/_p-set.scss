@@ -1,0 +1,31 @@
+@use "global" as *;
+.p-set__content {
+  @include mq("md") {
+    display: flex;
+  }
+}
+
+.p-set__img {
+  @include mq("md") {
+    max-width: rem(700);
+    width: 100%;
+  }
+}
+
+.p-set__body {
+  margin-top: rem(20);
+  text-align: center;
+  @include mq("md") {
+    margin-top: 0;
+    flex: 1;
+    text-align: right;
+  }
+}
+
+.p-set__price {
+  font-size: rem(40);
+  font-family: $price-font-family;
+  @include mq("md") {
+    font-size: rem(60);
+  }
+}

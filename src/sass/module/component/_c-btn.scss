@@ -1,0 +1,58 @@
+@use "global" as *;
+.c-btn {
+  display: block;
+  color: $text-white;
+  padding: rem(25) 0 rem(24);
+  width: min(#{rem(290), 100%});
+  text-align: center;
+  margin: 0 auto;
+  background-color: $text-black;
+  position: relative;
+  transition: all 0.3s;
+}
+
+.c-btn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: rem(16);
+  transform: translateY(-50%);
+  background-image: url(../images/icon_arrow-right.svg);
+  width: rem(8);
+  height: rem(14);
+}
+
+.c-btn::after {
+  content: "";
+  position: absolute;
+  border-right: rem(1) solid $text-black;
+  border-bottom: rem(1) solid $text-black;
+  width: 100%;
+  height: 100%;
+  top: rem(6);
+  right: rem(-6);
+  transition: transform 0.3s;
+}
+
+.c-btn:hover {
+  @include mq("md") {
+    transform: translate(#{rem(5), rem(5)});
+    transition: transform 0.3s;
+    opacity: 1;
+    
+  }
+}
+
+.c-btn:hover::after {
+  @include mq("md") {
+    transform: translate(#{rem(-6), rem(-6)});
+  }
+}
+
+.c-btn input {
+  display: block;
+    width: 100%;
+    position: relative;
+    height: 100%;
+    z-index: 1;
+}

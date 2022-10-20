@@ -1,0 +1,83 @@
+@use "global" as *;
+.c-hamburger {
+  position: fixed;
+  top: rem(10);
+  right: rem(10);
+  cursor: pointer;
+  z-index: 9999;
+  width: rem(60);
+  height: rem(60);
+  border-radius: 50%;
+  background-color: $main-color;
+  @include mq('md') {
+    right: rem(20);
+    // opacity: 0;
+    // transition: opacity 0.3s;
+    display: none;
+  }
+}
+
+.c-hamburger.is-show {
+  // display: block;
+}
+
+//jQueryでclass付与
+.c-hamburger.is-active {
+  background-color: $text-white;
+  .c-hamburger__bar1 {
+    top: rem(8);
+    // right: 0;
+    background: $main-color;
+    transform: rotate(45deg);
+  }
+
+  .c-hamburger__bar2 {
+    top: rem(8);
+    // right: 0;
+    display: none;
+  }
+
+  .c-hamburger__bar3 {
+    top: rem(8);
+    // right: 0;
+    background: $main-color;
+    transform: rotate(-45deg);
+  }
+}
+
+.c-hamburger__bars {
+  width: rem(27);
+  height: rem(16);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.c-hamburger__bar1,
+.c-hamburger__bar2,
+.c-hamburger__bar3 {
+  width: rem(27);
+  height: rem(2);
+  background: $text-white;
+  display: block;
+  position: absolute;
+  transition: ease 0.3s;
+}
+
+.c-hamburger__bar1 {
+  top: 0;
+}
+
+.c-hamburger__bar2 {
+  top: rem(6);
+}
+
+.c-hamburger__bar3 {
+  top: rem(12);
+}
+
+
+body.modal-open { 
+  overflow: hidden;
+}

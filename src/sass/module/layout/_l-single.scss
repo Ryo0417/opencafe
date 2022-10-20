@@ -1,0 +1,7 @@
+@use "global" as *;
+.l-single {
+  margin-top: rem(53.6);
+  @include mq("md") {
+    margin-top: rem(80);
+  }
+}

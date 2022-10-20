@@ -1,0 +1,13 @@
+@use "global" as *;
+.c-title {
+  font-size: rem(40);
+  font-family: $title-font-family;
+  line-height: calc(51 / 40);
+}
+
+.c-title span {
+  display: block;
+  font-size: rem(12);
+  font-family: $base-font-family;
+  margin-top: rem(4);
+}

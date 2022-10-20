@@ -1,0 +1,48 @@
+@use "global" as *;
+.c-tab__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: rem(13);
+  @include mq("md") {
+    flex-wrap: initial;
+  }
+}
+
+.c-tab__menu .current {
+  background-color: $main-color
+}
+
+.c-tab__menu {
+  width: rem(161);
+  height: rem(64);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: max(#{rem(161), calc(50% - #{rem(12)})});
+  color: $text-white;
+  background-color: #888;
+  font-size: rem(16);
+  line-height: calc(20 / 16);
+  position: relative;
+}
+
+.c-tab__menu a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.c-tab__menu a::after {
+  content: "";
+  position: absolute;
+  top: rem(4);
+  left: rem(4);
+  width: calc(100% - #{rem(8)});
+  height: calc(100% - #{rem(8)});
+  border: rem(1) solid $text-white;
+}
+

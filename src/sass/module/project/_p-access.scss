@@ -1,0 +1,56 @@
+@use "global" as *;
+.p-access {
+  position: relative;
+  padding-top: rem(80);
+  padding-bottom: rem(80);
+  background-color: $bg-dark;
+}
+
+.p-access::after {
+  content: "";
+  position: absolute;
+  top: rem(-100);
+  right: rem(-30);
+  width: rem(188);
+  height: rem(180);
+  background: url(../images/bg_bread.png) no-repeat center center / cover;
+  @include mq("md") {
+    top: rem(-170);
+    right: rem(-70);
+    width: rem(374);
+    height: rem(359);
+  }
+}
+
+.p-access__content {
+  margin: 0 auto;
+  position: relative;
+  @include mq("md") {
+    max-width: rem(728);
+  }
+}
+
+.p-access__inner::before {
+  content: "";
+  position: absolute;
+  top: rem(-122);
+  left: rem(-33);
+  width: rem(200);
+  height: rem(172);
+  background: url(../images/img_balloon-access.svg) no-repeat center center /
+    cover;
+  @include mq("md") {
+    top: rem(-130);
+    left: rem(50);
+    width: rem(232);
+    height: rem(200);
+  }
+}
+
+.p-access__head {
+  text-align: center;
+}
+
+.p-access__content {
+  margin-top: rem(40);
+}

@@ -1,0 +1,7 @@
+@use "global" as *;
+.l-mv {
+  height: 100vh;
+  @include mq("md") {
+    height: calc(100vh - #{rem(65)});
+  }
+}

@@ -1,0 +1,120 @@
+@use "global" as *;
+.p-infomation__content + .p-infomation__content {
+  margin-top: rem(60);
+  @include mq("md") {
+    margin-top: rem(120);
+  }
+}
+
+.p-infomation__head {
+  text-transform: uppercase;
+  padding-left: rem(8);
+  font-size: rem(20);
+  line-height: calc(29 / 20);
+  border-left: rem(6) solid $main-color;
+  @include mq("md") {
+    padding-left: rem(16);
+    font-size: rem(24);
+    line-height: calc(35 / 24);
+  }
+}
+
+.p-infomation__img.p-infomation__img--shop {
+  margin-top: rem(20);
+  @include mq("md") {
+    margin-top: rem(24);
+  }
+}
+
+.p-infomation__body.p-infomation__body--shop {
+  margin-top: rem(20);
+  @include mq("md") {
+    margin-top: rem(24);
+  }
+}
+
+.p-infomation__img {
+  position: relative;
+  width: 100%;
+  padding-top: 54.76%;
+  overflow: hidden;
+  border: rem(5) solid $text-white;
+  @include mq("md") {
+    border: rem(10) solid $text-white;
+  }
+}
+.p-infomation__img iframe {
+  content: "";
+  position: absolute;
+  top: rem(-150);
+  left: 0;
+  width: 100%;
+  height: calc(100% + #{rem(150)} + #{rem(150)});
+  // pointer-events: none;
+  aspect-ratio: 668 / 367;
+  @include mq("md") {
+    top: rem(-200);
+    height: calc(100% + #{rem(200)} + #{rem(200)});
+  }
+}
+
+.p-infomation__body {
+  font-size: rem(14);
+  margin-top: rem(40);
+  @include mq("md") {
+    display: flex;
+    gap: rem(40);
+  }
+}
+
+.p-infomation__list {
+  width: 100%;
+  @include mq("md") {
+    max-width: rem(324);
+  }
+}
+
+.p-infomation__address,
+.p-infomation__tel,
+.p-infomation__mail,
+.p-infomation__hour,
+.p-infomation__close,
+.p-infomation__seat {
+  display: flex;
+  padding-bottom: rem(14);
+  border-bottom: rem(1) solid $text-black;
+}
+
+.p-infomation__tel,
+.p-infomation__mail,
+.p-infomation__close,
+.p-infomation__seat {
+  margin-top: rem(20);
+  @include mq("md") {
+    margin-top: rem(24);
+  }
+}
+
+.p-infomation__hour {
+  margin-top: rem(20);
+  @include mq("md") {
+    margin-top: 0;
+  }
+}
+
+.p-infomation__list dt {
+  width: rem(56);
+}
+
+.p-infomation__list dd {
+  display: block;
+  margin-left: rem(24);
+}
+
+.p-infomation__tel dt {
+  text-transform: uppercase;
+}
+
+.p-infomation__mail dt {
+  text-transform: capitalize;
+}

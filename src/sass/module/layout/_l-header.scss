@@ -1,0 +1,13 @@
+@use "global" as *;
+.l-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: rem(73);
+  padding-top: rem(10);
+  z-index: 9999;
+  @include mq("md") {
+    position: static;
+  }
+}

@@ -1,0 +1,121 @@
+@use "global" as *;
+.swiper {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  overflow: hidden;
+  list-style: none;
+  /* Fix of Webkit flickering */
+}
+
+/* ラッパー */
+.swiper-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  transition-property: transform;
+  box-sizing: content-box;
+  transition-timing-function: ease-in;
+  padding-bottom: 0;
+  @include mq("md") {
+    padding-bottom: rem(60);
+  }
+}
+
+/* スライド */
+.swiper-slide {
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  transition-property: transform;
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+
+}
+
+// .swiper-wrapper::after {
+//   content: "";
+//   position: absolute;
+//   bottom: rem(-65);
+//   right: 0;
+//   width: calc(984 / 1080) * 100%;
+//   background-color: black;
+//   z-index: -1;
+// }
+
+
+.swiper-slide img {
+  height: 100%;
+}
+
+// .pc-slide-image {
+//   width: 100%;
+//   height: 100vh;
+//   background-size: cover;
+//   background-position: center center;
+//   background-repeat: no-repeat;
+// }
+
+// ズームイン
+@keyframes zoomUp {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+
+.swiper-slide-active .bg-slide-image img,
+.swiper-slide-duplicate-active .bg-slide-image img,
+.swiper-slide-prev .bg-slide-image img {
+  animation: zoomUp 10s linear 0s 1 normal both;
+}
+
+// .swiper-slide-active .pc-slide-image,
+// .swiper-slide-duplicate-active .pc-slide-image,
+// .swiper-slide-prev .pc-slide-image {
+//   animation: zoomUp 10s linear 0s 1 normal both;
+// }
+
+/* スライドさせるコンテンツのスタイル（絶対配置）*/
+.slide-content {
+  position: absolute;
+  top: rem(129);
+  left: rem(20);
+  font-size: rem(16);
+  line-height: 2;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  z-index: 10;
+  text-align: left;
+
+  @include mq('md') {
+    top: initial;
+    bottom: rem(120);
+    left: rem(60);
+    font-size: rem(20);
+  }
+}
+
+.swiper > .swiper-pagination-bullets {
+  content: "";
+  position: absolute;
+  bottom: rem(12);
+  left: rem(12);
+  width: 100%;
+  text-align-last: left;
+  @include mq("md") {
+    bottom: rem(72);
+  }
+}
+
+.swiper >  .swiper-pagination-bullets > .swiper-pagination-bullet {
+  margin: 0 rem(8);
+  background-color: $text-white
+}
+
+.swiper >  .swiper-pagination-bullets > .swiper-pagination-bullet-active {
+  background-color: #D59B71;
+}
