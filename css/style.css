@@ -1151,6 +1151,8 @@ body.modal-open {
 }
 
 .p-access__content {
+  padding-left: 20px;
+  padding-right: 20px;
   margin: 0 auto;
   position: relative;
 }

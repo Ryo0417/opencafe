@@ -23,6 +23,9 @@
 }
 
 .p-access__content {
+  // max-width: rem(375);
+  padding-left: $padding-sp;
+  padding-right: $padding-sp;
   margin: 0 auto;
   position: relative;
   @include mq("md") {
@@ -53,4 +56,5 @@
 
 .p-access__content {
   margin-top: rem(40);
+  
 }

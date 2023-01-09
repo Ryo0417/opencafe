@@ -65,7 +65,7 @@ const cssSass = () => {
         .pipe(postcss([cssnext(browsers)]))
         .pipe(sourcemaps.write('./'))
         .pipe(dest(destPath.css))
-        .pipe(browserSync.stream())//追加分
+        .pipe(browserSync.stream())
         .pipe(notify({
             message: 'コンパイル出来たよ！',//文字は好きなものに変更してね！
             onLast: true
@@ -93,7 +93,7 @@ const imgImagemin = () => {
 
 // ファイルの変更を検知
 const watchFiles = () => {
-    watch(srcPath.css, series(cssSass, browserSyncReload))
+    watch(srcPath.css, series(cssSass))
     watch(srcPath.img, series(imgImagemin, browserSyncReload))
     watch(srcPath.html, series(browserSyncReload))
     watch(srcPath.php, series(browserSyncReload))
